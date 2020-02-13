@@ -1,7 +1,11 @@
 body {
   margin: 0;
+  width: 100%;
   position: relative;
   text-align: unset;
+}
+#root {
+  width: 100%;
 }
 
 nav {
@@ -373,6 +377,7 @@ nav {
   margin: 120px 165px 0 165px;
   display: flex;
   position: relative;
+  text-align: start;
 }
 
 .feed1,

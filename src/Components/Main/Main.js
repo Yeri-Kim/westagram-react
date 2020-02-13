@@ -7,10 +7,10 @@ import Feed from "./MainFeed";
 class Main extends Component {
   render() {
     return (
-      <div>
+      <>
         <Nav />
         <Feed />
-      </div>
+      </>
     );
   }
 }
