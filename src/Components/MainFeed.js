@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import "../Common.css";
-import "./Main.css";
+import "../pages/Common.css";
+import "../pages/Main.css";
 import MainRight from "./MainRight";
 
-import profileImg from "../Image/feed1-profile.jpg";
-import threeDot from "../Image/three-dot.png";
-import feedMain from "../Image/feed1-main.jpg";
-import heart from "../Image/heart.png";
-import talk from "../Image/talk.png";
-import share from "../Image/share.png";
-import bookmark from "../Image/bookmark.png";
+import profileImg from "./image/feed1-profile.jpg";
+import threeDot from "./image/three-dot.png";
+import feedMain from "./image/feed1-main.jpg";
+import heart from "./image/heart.png";
+import talk from "./image/talk.png";
+import share from "./image/share.png";
+import bookmark from "./image/bookmark.png";
 
 class Feed extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "../Common.css";
-import "./Main.css";
+import "../pages/Common.css";
+import "../pages/Main.css";
 
 class MainRight extends Component {
   render() {

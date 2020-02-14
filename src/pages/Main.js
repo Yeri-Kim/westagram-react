@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "../Common.css";
+import "../pages/Common.css";
 import "./Main.css";
-import Nav from "./MainNav";
-import Feed from "./MainFeed";
+import Nav from "../components/MainNav";
+import Feed from "../components/MainFeed";
 
 class Main extends Component {
   render() {

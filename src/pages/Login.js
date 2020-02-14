@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../Common.css";
+import "./Common.css";
 import "./Login.css";
-import logoText from "../Image/logo_text.png";
+import logoText from "../components/image/logo_text.png";
 
 class Login extends Component {
   render() {
