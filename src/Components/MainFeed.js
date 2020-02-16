@@ -3,15 +3,52 @@ import "../pages/Common.css";
 import "../pages/Main.css";
 import MainRight from "./MainRight";
 
-import profileImg from "./image/feed1-profile.jpg";
-import threeDot from "./image/three-dot.png";
-import feedMain from "./image/feed1-main.jpg";
-import heart from "./image/heart.png";
-import talk from "./image/talk.png";
-import share from "./image/share.png";
-import bookmark from "./image/bookmark.png";
+import profileImg from "./Image/feed1-profile.jpg";
+import threeDot from "./Image/three-dot.png";
+import feedMain from "./Image/feed1-main.jpg";
+import heart from "./Image/heart.png";
+import talk from "./Image/talk.png";
+import share from "./Image/share.png";
+import bookmark from "./Image/bookmark.png";
 
-class Feed extends Component {
+class MainFeed extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comment: "", //input창
+      comments: [] //입력된 댓글을 포함하고있는 배열
+    };
+  }
+
+  //input값 받는 onChange 함수
+  newComment = e => {
+    this.setState({
+      comment: e.target.value
+    });
+    console.log(e.target.value);
+  };
+
+  //추가된 input을 배열에 넣는 onClick 함수
+  addComment = e => {
+    this.setState({
+      comments: this.state.comments.concat(this.state.comment),
+      comment: ""
+    });
+  };
+
+  //map을 return하는 함수
+  //매개변수 꼭 설정(arr) -> 함수를 실행할 때 받는 배열인 인자에 map를 쓰기 때문에
+  cmtUpdate = arr => {
+    return arr.map(cmt => (
+      <div className="comment-list" key={cmt}>
+        <span className="comment-id">_sunghae__</span>
+        <span className="comment-text">{cmt}</span>
+        <img src={heart} />
+      </div>
+    ));
+  };
+
   render() {
     return (
       <section className="main2">
@@ -62,9 +99,15 @@ class Feed extends Component {
                     </div>
                     <div className="comment-list">
                       <span className="comment-id">jiy00000n</span>
-                      <span className="comment-text">아 로지 사랑스로왕,,</span>
+                      <span className="comment-text">
+                        아 로지 사랑스로왕,,🧡🧡
+                      </span>
                       <img src={heart} />
                     </div>
+
+                    {/* 새로운 댓글 추가할 위치 */}
+                    {/* this.state.comments를 인자로 받음 */}
+                    {this.cmtUpdate(this.state.comments)}
                   </div>
                 </div>
                 <div className="uploadTime">15분 전</div>
@@ -75,8 +118,14 @@ class Feed extends Component {
                     className="submitComment"
                     type="text"
                     placeholder="댓글 달기..."
+                    onChange={this.newComment}
+                    value={this.state.comment}
                   />
-                  <button className="submitBtn">게시</button>
+
+                  {/* comment추가 이벤트 */}
+                  <button className="submitBtn" onClick={this.addComment}>
+                    게시
+                  </button>
                 </div>
               </section>
             </div>
@@ -88,4 +137,4 @@ class Feed extends Component {
   }
 }
 
-export default Feed;
+export default MainFeed;

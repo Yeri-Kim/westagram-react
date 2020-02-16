@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Common.css";
 import "./Login.css";
-import logoText from "../components/image/logo_text.png";
+import logoText from "../Components/Image/logo_text.png";
 
 class Login extends Component {
   constructor(props) {
@@ -31,7 +31,6 @@ class Login extends Component {
   //withRouter HOC로 버튼 클릭시 Main 넘어가기
   //id랑 pw이 저장해놓은 값이랑 같을 경우 메인 이동
   goToMain = e => {
-    console.log(this.state);
     this.state.id === "_sunghae__" && this.state.pw === "1234"
       ? this.props.history.push("/Main")
       : alert("아이디 또는 비밀번호가 맞지 않습니다.");

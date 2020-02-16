@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "../pages/Common.css";
 import "../pages/Main.css";
-import logoText from "../components/image/logo_text.png";
+import logoText from "../Components/Image/logo_text.png";
 
-class Nav extends Component {
+class MainNav extends Component {
   render() {
     return (
       <nav>
@@ -46,4 +46,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default MainNav;

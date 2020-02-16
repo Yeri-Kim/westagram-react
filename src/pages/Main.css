@@ -374,7 +374,8 @@ nav {
 }
 
 .main2 {
-  margin: 120px 165px 0 165px;
+  width: 935px;
+  margin: 140px auto;
   display: flex;
   position: relative;
   text-align: start;
@@ -399,7 +400,7 @@ nav {
   height: 77px;
   margin: 0;
   justify-content: space-between;
-  margin: 0 145px;
+  margin: 0 auto;
 }
 
 .link-left img {
