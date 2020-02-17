@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../pages/Common.css";
 import "../pages/Main.css";
 import MainRight from "./MainRight";
+import CmtBox from "./CmtBox";
 
 import profileImg from "./Image/feed1-profile.jpg";
 import threeDot from "./Image/three-dot.png";
@@ -26,10 +27,10 @@ class MainFeed extends Component {
     this.setState({
       comment: e.target.value
     });
-    console.log(e.target.value);
   };
 
   //추가된 input을 배열에 넣는 onClick 함수
+  // comment:"" 하는 이유는 클릭 후 인풋안에 있던 텍스트를 없애기 위해서
   addComment = e => {
     this.setState({
       comments: this.state.comments.concat(this.state.comment),
@@ -39,14 +40,9 @@ class MainFeed extends Component {
 
   //map을 return하는 함수
   //매개변수 꼭 설정(arr) -> 함수를 실행할 때 받는 배열인 인자에 map를 쓰기 때문에
+  //cmt = this.state.comments이고 이 값을 CmtBox의 props로 전달
   cmtUpdate = arr => {
-    return arr.map(cmt => (
-      <div className="comment-list" key={cmt}>
-        <span className="comment-id">_sunghae__</span>
-        <span className="comment-text">{cmt}</span>
-        <img src={heart} />
-      </div>
-    ));
+    return arr.map(cmt => <CmtBox data={cmt} />);
   };
 
   render() {
